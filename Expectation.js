@@ -2,32 +2,33 @@ function Expectation(parent, variable) {
    var status
    var message
 
-   this.toEqual = function(comparitor) {
-     comparitor = comparitor
+   this.toEqual = function(comparator) {
+     comparator = comparator
      message = ' to equal '
-     if (variable == comparitor) {
+     if (variable == comparator) {
        status = 'PASS'
      } else {
        status = 'FALSE'
      }
-     pushToResults(status, variable, message, comparitor)
+     pushToResults(status, variable, message, comparator)
   }
 
-   this.toNotEqual = function(comparitor) {
-     comparitor = comparitor
+   this.toNotEqual = function(comparator) {
+     comparator = comparator
      message = ' to equal '
-     if (variable != comparitor) {
+     if (variable != comparator) {
        status = 'PASS'
      } else {
        status = 'FALSE'
      }
-     pushToResults(status, variable, message, comparitor)
+     pushToResults(status, variable, message, comparator)
    }
 
-   pushToResults = function(status, variable, message, comparitor) {
+   pushToResults = function(status, variable, message, comparator) {
      parent.results.push({
        status: status,
-       message: 'expect ' + variable + message + comparitor + ' -- ' + status
+       message: 'expect ' + variable + message + comparator + ' -- ' + status
      })
    }
  }
+
