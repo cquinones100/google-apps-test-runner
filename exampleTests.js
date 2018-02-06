@@ -51,32 +51,4 @@ function testFileTests() {
     this.expect(printData(data)[2][8]).toEqual(true)
     this.expect(printData(data)[2][9]).toEqual('$12.50')                                  
   })
-
-  function printDataPrintsMultipleRows() {
-  var data = [
-    ["Employee Timecard", "", "", "", "", "", "", "WareHouse", "", "", "", "", "", "", ""],
-    ["2/5/2018 11:01:53 AM (UTC-05:00) Eastern Time (US & Canada)", "", "", "", "", "", "", "1/29/2018 - 2/4/2018", "", "", "", "", "", "", ""],
-    ["Employe Name", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-    ['', 'carlos', ''],
-    [(new Date(1517184000000)), "", "Packaging Logistics", (new Date(-2209131000000)), (new Date(-2209111200000)), 5.5, 0.75, "", 0, 12.5, 68.75, "", 0, "", 0],
-    [(new Date(-2209131000000)), '', 'packaging', '8:30 AM', '2:00 PM', 5.5, 0.75, '', 0, '$12.50'],
-    ['', 'dude', ''],
-    [(new Date(-2209131000000)), '', 'packaging', '8:30 AM', '2:00 PM', 5.5, 0.75, '', 0, '$12.50']
-  ]
-
-  var statements = [
-    { statement: (printData(data)[2]), variable: data },
-    { statement: (printData(data)[2][0] === 'dude'), variable: data },
-    { statement: (printData(data)[2][1] === 'packaging'), variable: data },
-    { statement: (printData(data)[2][3] === '8:30 AM'), variable: data },
-    { statement: (printData(data)[2][4] === '2:00 PM'), variable: data },
-    { statement: (printData(data)[2][5] === 5.5), variable: data },
-    { statement: (printData(data)[2][6] === false), variable: data },
-    { statement: (printData(data)[2][7] === false), variable: data },
-    { statement: (printData(data)[2][8] === true), variable: data },
-    { statement: (printData(data)[2][9] === '$12.50'), variable: data }
-  ]
-
-  testRunner('it should print multiple rows correctly', statements)
-}
 }
