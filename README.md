@@ -28,7 +28,7 @@ expect(1 + 1).toEqual(2)
 ```
 
 ```javascript
-toNotEqual(value)
+.toNotEqual(value)
 
 expect(1 + 1).toNotEqual(3)
 ```
