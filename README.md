@@ -67,7 +67,7 @@ expect true to equal true -- PASS
 it(description, callback)
 
 it('should pass a test', function() {
-  expect(testPassed).toEqual(true)
+  this.expect(testPassed).toEqual(true)
 })
 ```
 
